@@ -20,3 +20,12 @@ jobs:
         with:
           name: dot-time-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+```
+
+5. **Ctrl + S** to save
+6. Then push:
+```
+cd "D:\Coding\App coding\dot_time"
+git add .
+git commit -m "fix yaml"
+git push
