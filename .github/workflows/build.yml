@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -35,35 +36,14 @@ jobs:
           path: build/app/outputs/flutter-apk/app-release.apk
 ```
 
-## Step 3 — Push the workflow to GitHub
+## Steps:
+1. Open `build.yml` in VS Code
+2. **Ctrl + A** to select all
+3. Delete everything
+4. Paste the code above
+5. **Ctrl + S** to save
+6. Then run:
 ```
 git add .
-git commit -m "add github actions workflow"
+git commit -m "fix workflow yaml"
 git push
-```
-
----
-
-# How to Download APK After Every Push 📲
-
-1. Go to your GitHub repo
-2. Click **"Actions"** tab
-3. Click the latest workflow run
-4. Scroll down to **"Artifacts"**
-5. Click **"dot-time-apk"** → downloads your APK!
-
----
-
-## Your Complete Workflow Going Forward 🔥
-```
-Make changes in VS Code
-       ↓
-git add .
-git commit -m "what you changed"
-git push
-       ↓
-GitHub Actions builds APK automatically (5 mins)
-       ↓
-Download APK from Actions tab
-       ↓
-Install on phone!
