@@ -184,7 +184,7 @@ class _DotScreenState extends State<DotScreen> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: isFilled
-                            ? Colors.white
+                            ? Colors.orange
                             : Colors.white.withOpacity(0.12),
                       ),
                     );
