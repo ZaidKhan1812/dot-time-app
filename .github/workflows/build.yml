@@ -1,34 +1,26 @@
 name: Build APK
-
 on:
   push:
-    branches: [ main ]
-
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-
       - name: Set up Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'zulu'
+          distribution: zulu
           java-version: '17'
-
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.41.4'
-          channel: 'stable'
-
-      - name: Install dependencies
+          flutter-version: 3.41.4
+          channel: stable
+      - name: Get dependencies
         run: flutter pub get
-
       - name: Build APK
         run: flutter build apk --release
-
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
@@ -36,14 +28,10 @@ jobs:
           path: build/app/outputs/flutter-apk/app-release.apk
 ```
 
-## Steps:
-1. Open `build.yml` in VS Code
-2. **Ctrl + A** to select all
-3. Delete everything
-4. Paste the code above
 5. **Ctrl + S** to save
-6. Then run:
+6. Then push:
 ```
+cd "D:\Coding\App coding\dot_time"
 git add .
-git commit -m "fix workflow yaml"
+git commit -m "fix yaml"
 git push
