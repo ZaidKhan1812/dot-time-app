@@ -6,8 +6,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
@@ -20,12 +20,3 @@ jobs:
         with:
           name: dot-time-apk
           path: build/app/outputs/flutter-apk/app-release.apk
-```
-
-5. **Ctrl + S** to save
-6. Then push:
-```
-cd "D:\Coding\App coding\dot_time"
-git add .
-git commit -m "fix yaml"
-git push
