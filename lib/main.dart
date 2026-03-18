@@ -62,8 +62,7 @@ class _DotScreenState extends State<DotScreen> {
         final packageInfo = await PackageInfo.fromPlatform();
         final currentVersion = packageInfo.version;
         if (latestVersion != currentVersion) {
-          final downloadUrl =
-              data['assets'][0]['browser_download_url'] as String;
+          final downloadUrl = data['html_url'] as String;
           _showUpdateDialog(downloadUrl);
         }
       }
@@ -100,12 +99,10 @@ class _DotScreenState extends State<DotScreen> {
             ),
             onPressed: () async {
               final uri = Uri.parse(downloadUrl);
-              if (await canLaunchUrl(uri)) {
-                await launchUrl(
-                  uri,
-                  mode: LaunchMode.externalApplication,
-                );
-              }
+              await launchUrl(
+                uri,
+                mode: LaunchMode.externalApplication,
+              );
             },
             child: const Text(
               'Update Now 🚀',
